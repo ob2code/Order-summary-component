@@ -1,0 +1,27 @@
+{
+  "name": "order-summary-component-main",
+  "version": "1.0.0",
+  "description": "Frontend Mentor - Order summary card",
+  "main": "index.html",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ob2code/order-summary-component.git"
+  },
+  "author": "ob2code",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ob2code/order-summary-component/issues"
+  },
+  "homepage": "https://github.com/ob2code/order-summary-component#readme"
+}
