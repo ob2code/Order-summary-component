@@ -8,31 +8,88 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+  <script src="https://kit.fontawesome.com/0c867811bd.js" crossorigin="anonymous"></script>
 
   <title>Frontend Mentor | Order summary card</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     body {
-      background-color: beige;
+      /* background-color: beige; */
+      background-image: url("images/pattern-background-desktop.svg");
+      background-color: hsl(225, 100%, 94%);
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
     #page-wapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      outline: dashed 1px black;
       height: 100vh;
+
     }
 
     #main-container {
       max-width: 600px;
       width: 90%;
-      height: 80vh;
-      background-color: bisque;
+      /* height: 80vh; */
+      background-color: white;
       border-radius: 15px;
-      
-      
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    #orderDesc {
+      margin: 0;
+      padding: 10px;
+    }
+
+    #orderPlan {
+      border-radius: 15px;
+      background-color: hsl(225, 100%, 98%);
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #orderPanel {
+      display: flex;
+
+      align-items: center;
+
+    }
+
+    #orderDetail {
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+    }
+
+    #musicIcon {
+      font-size: 1.5rem;
+      background-color: hsl(225, 100%, 94%);
+      border-radius: 50%;
+      border: solid 15px hsl(225, 100%, 94%);
+
+    }
+
+    .btn {
+      width: 80%;
+      border-radius: 10px;
+      border: none;
+      padding: 10px;
+      margin: 10px;
+      background-color: hsl(245, 75%, 52%);
+      color: white;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
     }
 
     @media screen and (max-width: 767px) {
@@ -40,8 +97,8 @@
         background-image: url("images/pattern-background-mobile.svg");
         background-color: hsl(225, 100%, 94%);
         /* Used if the image is unavailable */
-        background-size: contain;
-        background-repeat: no-repeat;
+        /* background-size: contain;
+        background-repeat: no-repeat; */
       }
     }
 
@@ -53,19 +110,19 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
-    #header{
-      /* width: 100px;
-      height: 100px;
-      outline: dashed 1px black; */
-      
-    }
-    #imgheader{
-      
+
+    img {
+
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
       width: 100%;
-      /* height: 100px; */
-      /* object-fit: contain; */
+
+    }
+
+    #plan {
+      border-radius: 15px;
+      background-color: cadetblue;
+      margin: 20px;
     }
   </style>
 </head>
@@ -74,26 +131,29 @@
 
   <div id="page-wapper">
     <div id="main-container">
-      
-        <img id="imgheader" src="./images/illustration-hero.svg">
-      
-      
-      Order Summary
 
-      You can now listen to millions of songs, audiobooks, and podcasts on any
-      device anywhere you like!
+      <img src="./images/illustration-hero.svg" alt="hero banner">
 
-      Annual Plan
-      $59.99/year
+      <h1>Order Summary</h1>
 
-      Change
-
-      Proceed to Payment
-      Cancel Order
-
+      <p id="orderDesc">You can now listen to millions of songs, audiobooks, and podcasts on any
+        device anywhere you like!</p>
+      <div id="orderPlan">
+        <div id="orderPanel">
+          <i id="musicIcon" class="fas fa-music"></i>
+          <div id="orderDetail">
+            <p><strong>Annual Plan</strong></p>
+            <p>$59.99/year</p>
+          </div>
+        </div>
+        <a id="changePlan" href="#">Change</a>
+      </div>
+      <button class="btn">Proceed to Payment</button>
+      <a id="cancelOrder" href="#">Cancel Order</a>
     </div>
-
   </div>
+
+
 
 
   <!-- <div class="attribution">
