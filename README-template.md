@@ -60,6 +60,20 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
+To center verticaly & horizentaly, using flex
+To center just horizentaly, using margin ... auto
+```css
+.panel {
+  background-color: white;
+  
+  // Centered block elment
+  margin: var(--space-lg) auto;
+  
+  max-width: 720px;
+  padding: var(--space-lg);
+  border-radius: var(--rounded);
+}
+```
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:

@@ -5,21 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
+  <title>Frontend Mentor | Order summary card</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
   <script src="https://kit.fontawesome.com/0c867811bd.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap" rel="stylesheet">
 
-  <title>Frontend Mentor | Order summary card</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    :root {
+      --font: 'Red Hat Display', sans-serif;
+
+      --Pale-blue: hsl(225, 100%, 94%);
+      --Bright-blue: hsl(245, 75%, 52%);
+
+      --Very-pale-blue: hsl(225, 100%, 98%);
+      --Desaturated-blue: hsl(224, 23%, 55%);
+      --Dark-blue: hsl(223, 47%, 23%);
+
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-md: 1rem;
+      --text-lg: 1.5rem;
+
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 2rem;
+
+      --rounded-sm: 8px;
+      --rounded: 16px;
+
+    }
+
     body {
-      /* background-color: beige; */
       background-image: url("images/pattern-background-desktop.svg");
-      background-color: hsl(225, 100%, 94%);
+      background-color: var(--Pale-blue);
       background-size: contain;
       background-repeat: no-repeat;
+      font-family: var(--font);
     }
 
     #page-wapper {
@@ -27,29 +53,51 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-
     }
 
-    #main-container {
+    .card {
       max-width: 600px;
       width: 90%;
-      /* height: 80vh; */
       background-color: white;
-      border-radius: 15px;
+      border-radius: var(--rounded);
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 20px;
+      padding-bottom: var(--space-lg);
+
     }
 
-    #orderDesc {
-      margin: 0;
-      padding: 10px;
+    .card__image {
+      width: 100%;
     }
 
-    #orderPlan {
-      border-radius: 15px;
+    .card__image img {
+      border-top-left-radius: var(--rounded);
+      border-top-right-radius: var(--rounded);
+      width: 100%;
+    }
+
+    .card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: wheat;
+    }
+
+    .card__content__title {
+      font-weight: 900;
+      color: var(--Dark-blue);
+    }
+
+    .card__content__desc {
+      color: var(--Desaturated-blue);
+    }
+
+    .orderPlan {
+      border-radius: var(--rounded);
       background-color: hsl(225, 100%, 98%);
       width: 80%;
       display: flex;
@@ -59,14 +107,14 @@
       margin-bottom: 20px;
     }
 
-    #orderPanel {
+    .orderPlan__Panel {
       display: flex;
 
       align-items: center;
 
     }
 
-    #orderDetail {
+    .orderPlan__Panel__desc {
       padding-left: 10px;
       padding-right: 10px;
       text-align: left;
@@ -82,11 +130,11 @@
 
     .btn {
       width: 80%;
-      border-radius: 10px;
+      border-radius: var(--rounded-sm);
       border: none;
       padding: 10px;
       margin: 10px;
-      background-color: hsl(245, 75%, 52%);
+      background-color: var(--Bright-blue);
       color: white;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
@@ -111,13 +159,7 @@
       color: hsl(228, 45%, 44%);
     }
 
-    img {
 
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      width: 100%;
-
-    }
 
     #plan {
       border-radius: 15px;
@@ -130,26 +172,42 @@
 <body>
 
   <div id="page-wapper">
-    <div id="main-container">
-
-      <img src="./images/illustration-hero.svg" alt="hero banner">
-
-      <h1>Order Summary</h1>
-
-      <p id="orderDesc">You can now listen to millions of songs, audiobooks, and podcasts on any
-        device anywhere you like!</p>
-      <div id="orderPlan">
-        <div id="orderPanel">
-          <i id="musicIcon" class="fas fa-music"></i>
-          <div id="orderDetail">
-            <p><strong>Annual Plan</strong></p>
-            <p>$59.99/year</p>
-          </div>
-        </div>
-        <a id="changePlan" href="#">Change</a>
+    <div class="card">
+      <div class="card__image">
+        <img src="./images/illustration-hero.svg" alt="hero banner">
       </div>
-      <button class="btn">Proceed to Payment</button>
-      <a id="cancelOrder" href="#">Cancel Order</a>
+      <div class="card__content">
+
+        <h1 class="card__content__title">Order Summary</h1>
+
+        <p class="card__content__desc">You can now listen to millions of songs, audiobooks, and podcasts on any
+          device anywhere you like!</p>
+
+
+        <div class="orderPlan">
+          <div class="orderPlan__Panel">
+            <i id="musicIcon" class="fas fa-music"></i>
+            <div class="orderPlan__Panel__desc">
+              <p><strong>Annual Plan</strong></p>
+              <p>$59.99/year</p>
+            </div>
+          </div>
+          <a class="lnk lnk__change" href="#">Change</a>
+        </div>
+
+
+        <button class="btn btn__process"><span class="btn__text">Proceed to Payment</span></button>
+        <a class="lnk lnk__cancel" href="#">Cancel Order</a>
+      </div>
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 
